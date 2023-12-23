@@ -1,11 +1,16 @@
 import React from "react";
 
-const Accordeon = (props: any) => {
+type AccordeonPropsType = {
+  titleValue: string,
+  collapsed: boolean
+}
+
+const Accordeon = (props: AccordeonPropsType) => {
   // debugger;
   return (
     <>
       <AccordeonTitle title={props.titleValue} />
-      <AccordeonBody />
+      {!props.collapsed && <AccordeonBody />}
     </>
   );
 };

@@ -7,15 +7,14 @@ type AccordeonPropsType = {
 const UncontrolledAccordeon = (props: AccordeonPropsType) => {
   // debugger;
 
-  const [collaps, setCollaps] = useState(false)
+  const [collapsed, setCollapsed] = useState(false)
 
-  const collapsed = false;
 
   return (
     <>
       <AccordeonTitle title={props.titleValue} />
-      <button onClick={() => { setCollaps(collaps) }}>TOGGLE</button>
-      {collaps && <AccordeonBody />}
+      <button onClick={() => { setCollapsed(!collapsed) }}>TOGGLE</button>
+      {!collapsed && <AccordeonBody />}
     </>
   );
 };

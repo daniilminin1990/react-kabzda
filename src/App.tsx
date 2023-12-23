@@ -9,18 +9,12 @@ import { UncontrolledRating } from "./components/UncontrolledRating/Uncontrolled
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <h1>React app</h1>
       <UncontrolledAccordeon titleValue={"Здарова"} />
-      <UncontrolledAccordeon titleValue={"Мужики"} />
-      <UncontrolledRating value={2} />
-      {/* 
-      <Rating value={0} />
-      <Rating value={1} />
-      <Rating value={2} />
+      <Accordeon titleValue={"Menu"} collapsed={false} />
+      <UncontrolledRating />
       <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} /> */}
       <OnOff />
     </div>
   );
