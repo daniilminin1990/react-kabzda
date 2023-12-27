@@ -14,7 +14,7 @@ function App() {
       <UncontrolledAccordeon titleValue={"Здарова"} />
       <Accordeon titleValue={"Menu"} collapsed={false} />
       <UncontrolledRating />
-      <Rating value={3} />
+      {/* <Rating value={3} /> */}
       <OnOff />
     </div>
   );

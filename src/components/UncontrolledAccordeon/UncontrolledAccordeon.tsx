@@ -12,8 +12,7 @@ const UncontrolledAccordeon = (props: AccordeonPropsType) => {
 
   return (
     <>
-      <AccordeonTitle title={props.titleValue} />
-      <button onClick={() => { setCollapsed(!collapsed) }}>TOGGLE</button>
+      <AccordeonTitle title={props.titleValue} onClick={() => { setCollapsed(!collapsed) }} />
       {!collapsed && <AccordeonBody />}
     </>
   );
@@ -21,11 +20,12 @@ const UncontrolledAccordeon = (props: AccordeonPropsType) => {
 
 type AccordeonBodyPropsType = {
   title: string
+  onClick: () => void
 }
 
 function AccordeonTitle(props: AccordeonBodyPropsType) {
   // debugger;
-  return <h1>--{props.title}--</h1>;
+  return <h1 onClick={() => props.onClick()}>--{props.title}--</h1>;
 }
 
 function AccordeonBody() {
