@@ -10,14 +10,15 @@ import { UncontrolledRating } from "./components/UncontrolledRating/Uncontrolled
 function App() {
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  let [accordeonCollapsed, setAccordeonCollapsed] = useState<boolean>(false)
 
   return (
     <div className="App">
       <h1>React app</h1>
-      <Rating value={ratingValue} onClick={setRatingValue} />
       {/* <UncontrolledAccordeon titleValue={"Здарова"} /> */}
-      {/* <Accordeon titleValue={"Menu"} collapsed={false} /> */}
+      <Accordeon titleValue={"Menu"} collapsed={accordeonCollapsed} onClick={setAccordeonCollapsed} />
       {/* <UncontrolledRating /> */}
+      {/* <Rating value={ratingValue} onClick={setRatingValue} /> */}
       {/* <OnOff /> */}
     </div>
   );

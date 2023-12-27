@@ -2,22 +2,29 @@ import React from "react";
 
 type AccordeonPropsType = {
   titleValue: string,
-  collapsed: boolean
+  collapsed: boolean,
+  onClick: (collapsed: boolean) => void
 }
 
 const Accordeon = (props: AccordeonPropsType) => {
   // debugger;
   return (
     <>
-      <AccordeonTitle title={props.titleValue} />
+      <AccordeonTitle title={props.titleValue} onClick={props.collapsed} collapsed={false} />
       {!props.collapsed && <AccordeonBody />}
     </>
   );
 };
 
-function AccordeonTitle(props: any) {
+type AccordeonTilePropsType = {
+  onClick: (collapsed: boolean) => void
+  title: string
+  collapsed: boolean,
+}
+
+function AccordeonTitle(props: AccordeonTilePropsType) {
   // debugger;
-  return <h1>{props.title}</h1>;
+  return <h1 onClick={() => props.onClick(props.collapsed)}>{props.title}</h1>;
 }
 
 function AccordeonBody() {
