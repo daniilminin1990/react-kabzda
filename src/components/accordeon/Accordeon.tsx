@@ -10,21 +10,20 @@ const Accordeon = (props: AccordeonPropsType) => {
   // debugger;
   return (
     <>
-      <AccordeonTitle title={props.titleValue} onClick={props.collapsed} collapsed={false} />
+      <AccordeonTitle title={props.titleValue} onClick={() => props.onClick(!props.collapsed)} />
       {!props.collapsed && <AccordeonBody />}
     </>
   );
 };
 
 type AccordeonTilePropsType = {
-  onClick: (collapsed: boolean) => void
+  onClick: () => void
   title: string
-  collapsed: boolean,
 }
 
 function AccordeonTitle(props: AccordeonTilePropsType) {
   // debugger;
-  return <h1 onClick={() => props.onClick(props.collapsed)}>{props.title}</h1>;
+  return <h1 onClick={() => props.onClick()}>{props.title}</h1>;
 }
 
 function AccordeonBody() {
