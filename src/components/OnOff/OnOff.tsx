@@ -6,7 +6,7 @@ type PropsType = {
   // switchAction: () => void
 }
 
-function OnOff(props: PropsType) {
+export function OnOff(props: PropsType) {
 
   const onStyle = {
     width: "40px",
@@ -41,5 +41,3 @@ function OnOff(props: PropsType) {
     <div style={indicatorStyle}></div>
   </div>
 }
-
-export default OnOff
