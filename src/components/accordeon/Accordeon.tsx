@@ -6,7 +6,7 @@ type AccordeonPropsType = {
   onClick: () => void
 }
 
-const Accordeon = (props: AccordeonPropsType) => {
+export const Accordeon = (props: AccordeonPropsType) => {
   // debugger;
   return (
     <>
@@ -36,4 +36,3 @@ function AccordeonBody() {
   );
 }
 
-export default Accordeon;

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Rating, RatingValueType } from "./components/Rating/Rating";
-import Accordeon from "./components/Accordeon/Accordeon";
+import { Accordeon } from "./components/Accordeon/Accordeon";
 import { OnOff } from "./components/OnOff/OnOff";
 import UncontrolledAccordeon from "./components/UncontrolledAccordeon/UncontrolledAccordeon";
 import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
-import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import { UncontrolledOnOff } from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
 

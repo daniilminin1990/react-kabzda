@@ -3,12 +3,13 @@ import { useState } from "react"
 type PropsType = {
   // on: boolean
   onChange: (on: boolean) => void
+  defaultOn?: boolean
   // switchAction: () => void
 }
 
-function UncontrolledOnOff(props: PropsType) {
+export function UncontrolledOnOff(props: PropsType) {
 
-  const [on, setOn] = useState(false)
+  const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
   const onStyle = {
     width: "40px",
@@ -51,5 +52,3 @@ function UncontrolledOnOff(props: PropsType) {
     <div style={indicatorStyle}></div>
   </div>
 }
-
-export default UncontrolledOnOff
