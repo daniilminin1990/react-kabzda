@@ -50,17 +50,24 @@ import React, { useState } from "react";
 import { action } from '@storybook/addon-actions'
 import { Accordeon } from './Accordeon';
 
+const itemsList = [
+  { title: 'Alex', value: 1 },
+  { title: 'Dmitry', value: 2 },
+  { title: 'Valeriya', value: 3 }
+]
+
 export default {
   title: 'Accordeon',
   component: Accordeon
 }
 
 const callback = action('accordeon mode change event fired')
+const onClickCallBack = action('some item was clicked')
 
-export const MenuCollapsedMode = () => <Accordeon titleValue={"Menu"} collapsed={true} onClick={callback} />
-export const MenuUncollapsedMode = () => <Accordeon titleValue={"Users"} collapsed={false} onClick={callback} />
+export const MenuCollapsedMode = () => <Accordeon titleValue={"Menu"} collapsed={true} onTitleClick={callback} items={[]} onClick={onClickCallBack} />
+export const MenuUncollapsedMode = () => <Accordeon titleValue={"Users"} collapsed={false} onTitleClick={callback} items={itemsList} onClick={onClickCallBack} />
 
 export const MenuClickable = () => {
   const [value, setValue] = useState<boolean>(true)
-  return <Accordeon titleValue={"Users"} collapsed={value} onClick={() => setValue(!value)} />
+  return <Accordeon titleValue={"Users"} collapsed={value} onTitleClick={() => setValue(!value)} items={itemsList} onClick={(value) => { alert(`user with id ${value} should be happy`) }} />
 }
