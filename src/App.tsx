@@ -16,15 +16,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React app</h1>
-      {/* <UncontrolledAccordeon titleValue={"Здарова"} /> */}
+      {/* <h1>React app</h1> */}
+      <UncontrolledAccordeon titleValue={"Здарова"} />
       {/* <Accordeon titleValue={"Menu"} collapsed={accordeonCollapsed} onClick={() => setAccordeonCollapsed(!accordeonCollapsed)} /> */}
       {/* <UncontrolledRating /> */}
       {/* <Rating value={ratingValue} onClick={setRatingValue} /> */}
       {/* <OnOff on={switchOn} onChange={setSwitchOn} /> */}
       {/* В неконтроллируемом мы будем использовать хук, для того, чтобы отобразить переменную switchOn. 
       Когда пробросим функцию, мы свяжем ее с локальным стейтом неконтроллируемого компонента ,чтобы они дублировались, так мы сможем видеть значение */}
-      <UncontrolledOnOff onChange={setSwitchOn} /> {switchOn.toString()}
+      {/* <UncontrolledOnOff onChange={setSwitchOn} /> {switchOn.toString()} */}
     </div>
   );
 }

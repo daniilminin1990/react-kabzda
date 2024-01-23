@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
+import { TOGGLE_COLLAPSED, reducer } from "./reducer";
 
 type AccordeonPropsType = {
   titleValue: string
@@ -6,14 +7,14 @@ type AccordeonPropsType = {
 
 const UncontrolledAccordeon = (props: AccordeonPropsType) => {
   // debugger;
-
-  const [collapsed, setCollapsed] = useState(false)
-
+  // const [collapsed, setCollapsed] = useState(false)
+  const [state, dispatchCollapsed] = useReducer(reducer, { collapsed: false })
 
   return (
     <>
-      <AccordeonTitle title={props.titleValue} onClick={() => { setCollapsed(!collapsed) }} />
-      {!collapsed && <AccordeonBody />}
+      {/* <AccordeonTitle title={props.titleValue} onClick={() => { setCollapsed(!collapsed) }} /> */}
+      <AccordeonTitle title={props.titleValue} onClick={() => { dispatchCollapsed({ type: TOGGLE_COLLAPSED }) }} />
+      {!state.collapsed && <AccordeonBody />}
     </>
   );
 };
