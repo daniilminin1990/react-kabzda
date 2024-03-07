@@ -5,11 +5,11 @@ import {DigitalClockView} from "./DigitalClockView";
 import {AnalogClockView} from "./AnalogClockView";
 
 type Props = {
-    mode?: "analog" | 'digital'
+    mode?: 'analog' | 'digital'
 };
 
 export const get2DigitsString = (number:number) => number < 10 ? `0${number}` : number
-export const Clock: React.FC = (props: Props) => {
+export const Clock: React.FC<Props> = (props) => {
     const [date, setDate] = useState(new Date())
 
     useEffect(() => {

@@ -8,7 +8,7 @@ export default {
 
 export const BaseAnalogExample = () => {
     console.log('BaseExample')
-    return <Clock mode={'analog'}/>
+    return <Clock mode='analog'/>
 }
 export const BaseDigitalExample = () => {
     console.log('BaseExample')

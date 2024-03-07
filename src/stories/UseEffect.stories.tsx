@@ -77,3 +77,56 @@ export const SetIntervalExample = () => {
     Hello, counter: {counter} - fake: {fake}
   </>
 }
+
+export const ResetEffectExample = () => {
+  const [counter, setCounter] = useState(1);
+
+  console.log('SetTimeoutExample')
+
+  useEffect(() => {
+    console.log('Effect occured')
+    return () => {
+      console.log('RESET EFFECT')
+    }
+  }, []);
+
+  const increaseCounter = () => {
+    setCounter(counter + 1)
+  }
+
+  return <>
+    Hello, counter: {counter}
+    <button onClick={increaseCounter}>+</button>
+  </>
+}
+
+export const KeysTrackerExample = () => {
+  const [text, setText] = useState('');
+
+  console.log('component rendered with ' + text)
+
+  // useEffect(() => {
+  //   const handler = (e: KeyboardEvent)=>{
+  //     console.log(e.key)
+  //     setText(state => state + e.key)
+  //   }
+  //   window.addEventListener('keypress', handler)
+  //   return () => {
+  //     window.removeEventListener('keypress', handler)
+  //   }
+  // }, []);
+  useEffect(() => {
+    const handler = (e: KeyboardEvent)=>{
+      console.log(e.key)
+      setText(text + e.key)
+    }
+    window.addEventListener('keypress', handler)
+    return () => {
+      window.removeEventListener('keypress', handler)
+    }
+  }, [text]);
+
+  return <>
+    Text typed: {text}
+  </>
+}
